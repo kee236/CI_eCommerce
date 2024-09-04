@@ -472,3 +472,25 @@ array\_push\(</span>posting_medium, ucfirst($temp[0]));
             if ($info[$i]['parent_campaign_id'] == "0") {
 
                 $info[$i]['action'] .= ' <a href="#" class="btn btn-outline-primary btn-circle main_campaign_report" data-toggle="tooltip" data-placement="top" data-title="'. $this->lang->line("View campaign report") .'"  campaign_id="'. <span class="math-inline">info\[</span>
+
+['id'].'" campaign_type="'. $campaign_type .'"><i class="fas fa-eye"></i></a>';
+            }
+
+            if ($posting_status == 'pending') {
+
+                $info[$i]['action'] .= ' <a href="#" class="btn btn-outline-danger btn-circle delete_campaign" table_id="'. $info[$i]['id'] .'" campaign_type="'. $campaign_type .'" data-toggle="tooltip" data-placement="top" data-title="'. $this->lang->line("Delete this campaign") .'"><i class="fas fa-trash-alt"></i></a>';
+            }
+
+            $info[$i]['action'] .= '</div>';
+        }
+
+        $data['draw'] = (int)$_POST['draw'] + 1;
+        $data['recordsTotal'] = $total_result;
+        $data['recordsFiltered'] = $total_result;
+        $data['data'] = convertDataTableResult($info, $display_columns ,$start,$primary_key="id");
+
+        echo json_encode($data);
+    }
+
+    // ... (ส่วนที่เหลือของโค้ด)
+}
