@@ -1,0 +1,25 @@
+-- messenger_bot_engagement_2way_chat_plugin
+CREATE TABLE IF NOT EXISTS `messenger_bot_engagement_2way_chat_plugin` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `domain_code` varchar(100) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `page_auto_id` int(11) NOT NULL,
+  `facebook_rx_fb_user_info_id` int(11) NOT NULL,
+  `domain_name` varchar(255) NOT NULL,
+  `language` varchar(200) NOT NULL DEFAULT 'en_US',
+  `minimized` enum('hide','show','fade') NOT NULL DEFAULT 'show',
+  `logged_in` tinytext NOT NULL,
+  `logged_out` tinytext NOT NULL,
+  `color` varchar(100) NOT NULL,
+  `label_ids` varchar(250) NOT NULL COMMENT 'comma seperated,messenger_bot_broadcast_contact_group.id',
+  `reference` varchar(250) NOT NULL,
+  `template_id` int(11) NOT NULL COMMENT 'messenger_bot_postback.id',
+  `delay` int(11) NOT NULL DEFAULT 5,
+  `donot_show_if_not_login` enum('0','1') NOT NULL DEFAULT '0',
+  `add_date` datetime NOT NULL,
+  `visual_flow_campaign_id` int(11) NOT NULL,
+  `visual_flow_type` enum('flow','general') NOT NULL DEFAULT 'general',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `domain_code` (`domain_code`),
+  KEY `user_id` (`user_id`,`page_auto_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
