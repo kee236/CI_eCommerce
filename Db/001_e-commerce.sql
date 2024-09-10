@@ -1,0 +1,117 @@
+-- ecommerce_product
+CREATE TABLE IF NOT EXISTS `ecommerce_product` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `store_id` int(11) NOT NULL,
+  `product_name` varchar(255) NOT NULL,
+  `product_description` text NOT NULL,
+  `product_video_id` varchar(100) NOT NULL,
+  `original_price` float NOT NULL,
+  `sell_price` float NOT NULL,
+  `taxable` enum('0','1') NOT NULL DEFAULT '0',
+  `stock_item` int(11) NOT NULL,
+  `stock_display` enum('0','1') NOT NULL DEFAULT '0',
+  `stock_prevent_purchase` enum('0','1') NOT NULL DEFAULT '0',
+  `attribute_ids` varchar(255) NOT NULL,
+  `preparation_time` varchar(20) NOT NULL,
+  `preparation_time_unit` enum('minutes','hours','days') NOT NULL,
+  `purchase_note` text NOT NULL,
+  `thumbnail` text NOT NULL,
+  `featured_images` text NOT NULL,
+  `digital_product_file` text NOT NULL,
+  `category_id` int(11) NOT NULL,
+  `sales_count` int(11) NOT NULL,
+  `visit_count` int(11) NOT NULL,
+  `updated_at` datetime NOT NULL,
+  `status` enum('0','1') NOT NULL DEFAULT '1',
+  `deleted` enum('0','1') NOT NULL DEFAULT '0',
+  `woocommerce_product_id` int(11) DEFAULT NULL,
+  `woocommerce_price_html` text NOT NULL,
+  `related_product_ids` varchar(255) NOT NULL,
+  `upsell_product_id` int(11) NOT NULL,
+  `downsell_product_id` int(11) NOT NULL,
+  `is_featured` enum('0','1') NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `woocommerce_product_id` (`store_id`,`woocommerce_product_id`),
+  KEY `store_id` (`store_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+-- messenger_bot_drip_campaign
+CREATE TABLE IF NOT EXISTS `messenger_bot_drip_campaign` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `campaign_name` varchar(250) NOT NULL,
+  `page_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `message_content` text NOT NULL,
+  `message_content_hourly` text NOT NULL,
+  `created_at` datetime NOT NULL,
+  `last_sent_at` datetime NOT NULL,
+  `drip_type` enum('default','messenger_bot_engagement_checkbox','messenger_bot_engagement_send_to_msg','messenger_bot_engagement_mme','messenger_bot_engagement_messenger_codes','messenger_bot_engagement_2way_chat_plugin','custom') NOT NULL DEFAULT 'default',
+  `campaign_type` enum('messenger','email','sms') NOT NULL DEFAULT 'messenger',
+  `engagement_table_id` int(11) NOT NULL,
+  `between_start` varchar(50) NOT NULL DEFAULT '00:00',
+  `between_end` varchar(50) NOT NULL DEFAULT '23:59',
+  `timezone` varchar(250) NOT NULL,
+  `message_tag` varchar(255) NOT NULL,
+  `total_unsubscribed` int(11) NOT NULL,
+  `last_unsubscribed_at` datetime NOT NULL,
+  `external_sequence_sms_api_id` varchar(50) NOT NULL,
+  `external_sequence_email_api_id` varchar(50) NOT NULL,
+  `media_type` enum('fb','ig') NOT NULL DEFAULT 'fb',
+  `visual_flow_campaign_id` int(11) NOT NULL,
+  `visual_flow_sequence_id` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `page_id` (`page_id`,`user_id`),
+  KEY `xengagementtable_type` (`engagement_table_id`,`drip_type`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+-- messenger_bot_drip_campaign_assign
+CREATE TABLE IF NOT EXISTS `messenger_bot_drip_campaign_assign` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `subscribe_id` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `page_id` int(11) NOT NULL COMMENT 'auto_id',
+  `drip_campaign_id` int(11) NOT NULL,
+  `drip_type` enum('default','messenger_bot_engagement_checkbox','messenger_bot_engagement_send_to_msg','messenger_bot_engagement_mme','messenger_bot_engagement_messenger_codes','messenger_bot_engagement_2way_chat_plugin','custom') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'default',
+  `campaign_type` enum('messenger','email','sms') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'messenger',
+  `engagement_table_id` int(11) NOT NULL,
+  `is_sent` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `is_seen` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `is_opened` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `is_clicked` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `sent_at` datetime NOT NULL,
+  `seen_at` datetime NOT NULL,
+  `opened_at` datetime NOT NULL,
+  `clicked_at` datetime NOT NULL,
+  `last_updated_at` datetime NOT NULL,
+  `is_unsubscribed` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `unsubscribed_at` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `drip_campaign_id` (`drip_campaign_id`),
+  KEY `user_id` (`user_id`,`subscribe_id`,`page_id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- messenger_bot_drip_report
+CREATE TABLE IF NOT EXISTS `messenger_bot_drip_report` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `campaign_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `subscribe_id` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `page_id` int(11) NOT NULL COMMENT 'auto_id',
+  `report_type` enum('sent','delivered','opened','clicked','unsubscribe') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'sent',
+  `is_sent` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `is_delivered` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `is_opened` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `is_clicked` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `is_unsubscribed` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `sent_at` datetime NOT NULL,
+  `delivered_at` datetime NOT NULL,
+  `opened_at` datetime NOT NULL,
+  `clicked_at` datetime NOT NULL,
+`unsubscribed_at` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `campaign_id` (`campaign_id`,`user_id`,`page_id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
