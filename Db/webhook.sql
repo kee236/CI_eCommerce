@@ -40,3 +40,6 @@ CREATE TABLE IF NOT EXISTS `messenger_bot_thirdparty_webhook_trigger` (
   PRIMARY KEY (`id`),
   FOREIGN KEY (`webhook_id`) REFERENCES `messenger_bot_thirdparty_webhook` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+ALTER TABLE `messenger_bot_thirdparty_webhook` 
+ADD COLUMN `postback_id` VARCHAR(255) DEFAULT NULL AFTER `last_triggered_at`;
