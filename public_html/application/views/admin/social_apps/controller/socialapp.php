@@ -1,3 +1,9 @@
+<?
+
+
+
+
+
 public function ai_model_update_action()
 {
     // ... (ตรวจสอบ CSRF token และอื่นๆ)
