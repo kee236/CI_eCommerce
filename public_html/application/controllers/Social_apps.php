@@ -18,9 +18,9 @@ class Social_apps extends Home
         }
 
         $function_name=$this->uri->segment(2);
-        $pinterest_action_array = array('pinterest_settings', 'pinterest_settings_data', 'add_pinterest_settings','edit_pinterest_settings', 'pinterest_settings_update_action', 'delete_app_pinterest', 'change_app_status_pinterest','pinterest_intermediate_account_import_page','wordpress_settings_self_hosted','add_wordpress_self_hosted_settings','edit_wordpress_self_hosted_settings','wordpress_self_hosted_settings_data','delete_wordpress_self_hosted_settings','wordpress_self_hosted_settings_load_categories');
+        $line_action_array = array('line_settings', 'line_settings_data', 'add_line_settings','edit_line_settings', 'line_settings_update_action', 'delete_app_pinterest', 'change_app_status_pinterest','line_intermediate_account_import_page','wordpress_settings_self_hosted','add_wordpress_self_hosted_settings','edit_wordpress_self_hosted_settings','wordpress_self_hosted_settings_data','delete_wordpress_self_hosted_settings','wordpress_self_hosted_settings_load_categories');
 
-        if(!in_array($function_name, $pinterest_action_array)) 
+        if(!in_array($function_name, $line_action_array)) 
         {
             if ($this->session->userdata('user_type')== "Member" && $this->config->item("backup_mode")==0)
             redirect('home/login', 'location');        
