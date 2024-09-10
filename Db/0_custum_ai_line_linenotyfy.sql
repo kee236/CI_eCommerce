@@ -53,3 +53,9 @@ ADD COLUMN `line_group_id` int(11) DEFAULT NULL, -- สำหรับเชื�
 ADD FOREIGN KEY (`line_account_id`) REFERENCES `line_accounts` (`id`) ON DELETE SET NULL,
 ADD FOREIGN KEY (`line_notify_token_id`) REFERENCES `line_notify_tokens` (`id`) ON DELETE SET NULL,
 ADD FOREIGN KEY (`line_group_id`) REFERENCES `line_group_ids` (`id`) ON DELETE SET NULL;
+
+ALTER TABLE `ai_models`
+ADD COLUMN `line_channel_id` VARCHAR(255) DEFAULT NULL, 
+ADD COLUMN `line_channel_secret` VARCHAR(255) DEFAULT NULL,
+ADD COLUMN `line_channel_access_token` TEXT DEFAULT NULL,
+ADD COLUMN `line_notify_token` TEXT DEFAULT NULL;
