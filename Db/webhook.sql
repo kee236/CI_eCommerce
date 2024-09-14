@@ -43,3 +43,14 @@ CREATE TABLE IF NOT EXISTS `messenger_bot_thirdparty_webhook_trigger` (
 
 ALTER TABLE `messenger_bot_thirdparty_webhook` 
 ADD COLUMN `postback_id` VARCHAR(255) DEFAULT NULL AFTER `last_triggered_at`;
+
+ALTER TABLE `messenger_bot_thirdparty_webhook` 
+ADD COLUMN `postback_id` VARCHAR(255) DEFAULT NULL AFTER `last_triggered_at`;
+
+
+ALTER TABLE `messenger_bot_thirdparty_webhook` 
+ADD COLUMN `postback_id` VARCHAR(255) DEFAULT NULL AFTER `last_triggered_at`,
+ADD UNIQUE KEY `postback_id` (`postback_id`);
+
+ALTER TABLE `messenger_bot_thirdparty_webhook` 
+ADD COLUMN `postback_id` VARCHAR(255) NOT NULL AFTER `last_triggered_at`;
