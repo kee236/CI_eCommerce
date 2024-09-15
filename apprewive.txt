@@ -1,0 +1,126 @@
+pages_read_user_content:
+
+1. User Login to our system with their system username & password.
+2. Go to Facebook & Instagram Menu.
+3. User then Click the button "Login with Facebook" to import Facebook Account.
+4. Our system get the user information, Page List & Access Token.
+5. Now Click on the 'Enable Bot Connection' button icon. 6.Go to Comment growth tools -> Campaigns.
+7.Then switch to 'Facebook' account from the top bar of the page.
+8. Now Select pages from left side then page’s post list will display on the right column to set the auto reply campaign.
+9. Click on Gear icon beside each post.
+10. Click on ‘Leave a Comment Now’ link & then put content of your comment & submit. It will comment on that post by page.
+11. Also you can set auto reply for comment & private reply for comment from there.
+
+
+_------------- 2.    -----
+
+pages_manage_posts :
+
+1. User Login to our system with their system username & password.
+2. Go to Facebook & Instagram Menu.
+3. User then Click the button "Login with Facebook" to import Facebook Account.
+4. Our system get the user information, Page List & Access Token.
+5. Now Click on the 'Enable Bot Connection' button icon.
+6. Then user goes to Social Posting Menu -> Multimedia Post.
+7. Then click on 'Create new post' Button.
+8. Now enable "Facebook" from top-right corner of the page and you'll see the Facebook accounts pages list.
+9. Now click on the "Text,Link,Image,Video" to post Text,Link,Image,Video on Facebook page.
+10. User can post text, image, video, link in their pages & schedule for a future date.
+
+
+----
+
+pages_show_list
+บอกให้เราทราบวิธีที่คุณใช้สิทธิ์การอนุญาตหรือฟีเจอร์
+1. User Login to our system with their system username & password.
+2. Go to Facebook & Instagram Menu
+3. User then Click the button "Login with Facebook" to import Facebook Account.
+4. Our system get the user information, Page List & Access Token.
+
+--------
+
+
+pages_manage_metadata:
+
+1. User Login to our system with their system username & password.
+2. Go to Facebook & Instagram Menu.
+3. User then Click the button "Login with Facebook" to import Facebook Account.
+3. Our system get the user information, Page List & Access Token.
+4. Then user can subscribe their pages to Webhook for Messenger BOT & Feed Event by clicking ‘Enable bot connection’ icon.
+
+----
+
+
+pages_manage_engagement
+บอกให้เราทราบวิธีที่คุณใช้สิทธิ์การอนุญาตหรือฟีเจอร์
+pages_manage_engagement :
+
+1. User Login to our system with their system username & password.
+2. Go to Facebook & Instagram Menu.
+3. User then Click the button "Login with Facebook" to import Facebook Account.
+4. Our system get the user information, Page List & Access Token.
+5. Now Click on the 'Enable Bot Connection' button icon. 6.Go to Comment growth tools -> Campaigns.
+7.Then switch to 'Facebook' account from the top bar of the page.
+8. Now Select pages from left side then page’s post list will display on the right column to set the auto reply campaign.
+9. Click on Gear icon beside each post.
+10. Click on ‘Leave a Comment Now’ link & then put content of your comment & submit. It will comment on that post by page.
+11. Also you can set auto reply for comment & private reply for comment from there.
+
+---------
+
+Pages_messaging permission is required to create Page Messenger BOT where system will reply to users who send message to page's inbox for customer service or other valuable FAQ information etc.
+
+1. User Login to our system with their system username & password.
+2. Go to Facebook & Instagram Menu.
+3. Then user Click the button "Login with Facebook" to import Facebook Account.
+3. Our system get the user information, Page List & Access Token.
+4. Now Click on the 'Enable Bot Connection' button icon.
+6. Then go to 'Bot manager' Menu and switch to Facebook from the top bar of the page. Now select your Facebook account and click on "Bot Flow Builder".
+7. Now set Bot Clicking by 'Create new flow' Button.
+
+
+
+Pages_messaging permission is required to create Page Messenger BOT where system will reply to users who send message to page's inbox for customer service or other valuable FAQ information etc. 1. User Login to our system with their system username & password. 2. Go to Facebook & Instagram Menu. 3. Then user Click the button "Login with Facebook" to import Facebook Account. 3. Our system get the user information, Page List & Access Token. 4. Now Click on the 'Enable Bot Connection' button icon. 6. Then go to 'Bot manager' Menu and switch to Facebook from the top bar of the page. Now select your Facebook account and click on "Bot Flow Builder". 7. Now set Bot Clicking by 'Create new flow' Button.
+
+
+
++------
+
+read_insights permission is needed to show Page Messenger Analytics.
+1. User Login to our system with their system username & password.
+2. Go to Facebook & Instagram Menu.
+3. User then Click the button "Login with Facebook" to import Facebook Account.
+4. Our system get the user information, Page List & Access Token.
+5. Now Click on the 'Enable Bot Connection' button icon.
+6. Then from page list, click on the 'Analytics' button to see the messenger insight of that page.
+7. Messenger Analytics contains information of Daily unique new conversations, Messaging connections, Daily unique blocked conversations, Daily unique reported conversations, etc.
+
+----
+
+
+pages_read_engagement
+บอกให้เราทราบวิธีที่คุณใช้สิทธิ์การอนุญาตหรือฟีเจอร์
+pages_read_engagement:
+
+1. User Login to our system with their system username & password.
+2. Go to Facebook & Instagram Menu.
+3. User then Click the button "Login with Facebook" to import Facebook Account.
+4. Our system get the user information, Page List & Access Token.
+5. Now Click on the 'Enable Bot Connection' button icon.
+6.Go to Comment growth tools -> Campaigns.
+7.Then switch to 'Facebook' account from the top bar of the page.
+8. Now Select pages from left side then page’s post list will display on the right column to set the auto reply campaign.
+
+
+----
+
+Human Agent:
+
+This permission is needed to have a human agent respond to user messages using the human_agent tag within 7 days of a user's message.
+1. User Login to our system with their system username & password.
+2. Go to 'Facebook & Instagram' Menu.
+3. User then Click the button "Login with Facebook" to import Facebook Account.
+4. Our system get the user information, Page List & Access Token.
+5. Now Click on the 'Enable Bot Connection' button icon.
+6. Now click on the "Live Agent" menu and switch to Facebook from the top bar of the page.
+8. Now you'll get to the "Live Chat" section. From here, you can type messages to other users and see their messages
